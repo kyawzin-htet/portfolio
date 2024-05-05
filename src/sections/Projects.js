@@ -120,37 +120,88 @@ const projects = [
     title: "Weather App",
     src: weather,
     color: "#000000",
-    url: 'https://weatherapp-k-next.vercel.app/'
+    url: 'https://weatherapp-k-next.vercel.app/',
+    techStack: [
+      'next.js',
+      'react',
+      'tailwind',
+      'react-leaflet',
+      'axios'
+    ]
   },
   {
     title: "Kanban App",
     src: kanban,
     color: "#636e72",
-    url: 'https://mern-stack-kanban.vercel.app'
+    url: 'https://mern-stack-kanban.vercel.app',
+    techStack: [
+      'react',
+      'redux',
+      'react-beautiful-dnd',
+      'nodejs',
+      'express',
+      'jsonwebtoken',
+      'mongoose',
+      'cookie-parser',
+      'cors'
+    ]
   },
   {
     title: "Crypto Track",
     src: crypto,
     color: "#b2bec3",
-    url: 'https://track-app-crypto.netlify.app/'
+    url: 'https://track-app-crypto.netlify.app/',
+    techStack: [
+      'react',
+      'recharts',
+      'tailwind'
+    ]
   },
   {
     title: "Rhyme4U",
     src: rhyme4u,
     color: "#dfe6e9",
-    url: 'https://rhyme4u.netlify.app/'
+    url: 'https://rhyme4u.netlify.app/',
+    techStack: [
+      'react',
+      'redux',
+      'axios',
+      'swiper'
+    ]
   },
   {
     title: "Auth App",
     src: authapp,
     color: "#000000",
-    url: 'https://mern-authenication.vercel.app/'
+    url: 'https://mern-authenication.vercel.app/',
+    techStack: [
+      'react',
+      'zustand',
+      'tailwind',
+      'nodejs',
+      'express',
+      'jsonwebtoken',
+      'mailgen',
+      'mongoose',
+      'nodemailer'
+    ]
   },
   {
     title: "Kmovies",
     src: kmovies,
     color: "#636e72",
-    url: 'https://moviesk.netlify.app/'
+    url: 'https://moviesk.netlify.app/',
+    techStack: [
+      'react',
+      'redux',
+      'materialui',
+      'yup',
+      'swiper',
+      'nodejs',
+      'express',
+      'jsonwebtoken',
+      'mongoose',
+    ]
   }
 ]
 const scaleAnimation = {
@@ -232,7 +283,14 @@ function Projects() {
         <Body>
           {
             projects.map((project, index) => {
-              return <Project index={index} title={project.title} url={project.url} manageModal={manageModal} key={index} />
+              return <Project 
+                index={index} 
+                title={project.title} 
+                url={project.url} 
+                manageModal={manageModal} 
+                key={index} 
+                techStack={project.techStack} 
+              />
             })
           }
         </Body>

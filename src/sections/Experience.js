@@ -116,6 +116,12 @@ const Box = styled.div`
   position: relative;
   border: 1px solid ${(props) => props.theme.secondaryText};
   line-height: 2rem;
+
+  div{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
 `
 const SubTitle = styled.span`
   display: block;
@@ -156,6 +162,7 @@ const Company = styled.a`
     font-size: ${(props) => props.theme.fontsm};
     font-weight: 400;
   }
+
 `
 
 const Date = styled.span`
@@ -164,7 +171,7 @@ const Date = styled.span`
   color: ${(props) => props.theme.secondaryText};
 
   font-weight: 400;
-  margin:0.5rem 0;
+  margin:0.1rem 0;
   @media (max-width:48em){
     font-size: ${(props) => props.theme.fontxs};
     font-weight: 400;
@@ -174,17 +181,20 @@ const Date = styled.span`
 const RoadMapItem = ({title, subtext, company, date, addToRef}) =>{
 
   return(
-    <Item ref={addToRef}>
+    <Item ref={addToRef} data-aos="fade-up"
+    data-aos-duration="2000">
       <ItemContainer>
           <Box>
-            <SubTitle>{title}</SubTitle>
-            <Company
-              href="https://www.linkedin.com/company/caringcodecreation/" 
-              target="_blank"
-            >
-              {company}
-              <GoArrowUpRight className="icon" />
-            </Company>
+            <div>
+              <SubTitle>{title}</SubTitle>
+              <Company
+                href="https://www.linkedin.com/company/caringcodecreation/" 
+                target="_blank"
+              >
+                &#123; {company} &#125;
+                <GoArrowUpRight className="icon" />
+              </Company>
+            </div>
             <Date>({date})</Date>
             {/* <Text>{subtext}</Text> */}
           </Box>
@@ -243,7 +253,7 @@ const Experience = () => {
           <RoadMapItem 
             addToRef={addToRefs}
             title="Full-Stack Developer"
-            company={"C3-Caring Code Creation"} 
+            company={"C3"} 
             date={"Jan-2024/Now"}
             subtext="loream ipsum"
           />

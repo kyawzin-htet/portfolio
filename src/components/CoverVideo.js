@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import MainVideo from '../assets/backgroundVideo.mp4'
 import { motion } from 'framer-motion'
 import img from "../assets/Images/profile.jpg";
@@ -48,35 +48,68 @@ const ArrowDown = styled.div`
     margin-bottom: 10vh;
     bottom: 0;
 `
-const Card = styled(motion.div)`
-  box-sizing: border-box;
-  width: 18vw; 
-  height: auto;
-  border: 1px solid white;
-  backdrop-filter: blur(6px);
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s;
+const CardContainer = styled.div`
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  z-index: 1111;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  user-select: none;
-  font-weight: bolder;
-  color: black;
-  padding: 0.5rem;
-  position: relative;
+  box-shadow: 2px 2px 6px ${props => props.theme.secondaryText}, -2px -2px 6px ${props => props.theme.secondaryText};
+  z-index: -1;
 
-  @media (max-width: 64em){
-    width: 53vw;
-    height: auto; 
+  .profile{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 240px;
+    height: 240px;
+    z-index: 2;
+    background: #000;
+    backdrop-filter: blur(24px);
+    border-radius: 8px;
+    overflow: hidden;
+    outline: 2px solid #000;
+    opacity: 0.8;
   }
+`;
 
-  .profile {
-    width: 100%; 
-    height: auto;
+const BlobAnimation = keyframes`
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
   }
-`
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+`;
+
+const Blob = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+  background-color: ${props => props.theme.border};
+  opacity: 1;
+  filter: blur(12px);
+  animation: ${BlobAnimation} 5s infinite ease;
+`;
+
 
 const nameVariants = {
   hidden: {
@@ -197,16 +230,14 @@ const CoverVideo = () => {
     <VideoContainer>
       <DarkOverlay />
       <Info>
-        <Card 
-          data-scroll data-scroll-speed="2"
-        >
+         <CardContainer>
           <img
             className="profile"
             src={img}
-            alt="Kyaw Zin Htet"
-            
+            alt="Kyaw Zin Htet"       
           />
-        </Card>
+          <Blob />
+        </CardContainer>
         <Marquee id="direction">
           <Banner variants={nameVariants} initial="hidden" animate={scrollY > 100 ?  'hidden' : 'visible' }>
             <span>

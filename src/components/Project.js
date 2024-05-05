@@ -12,9 +12,18 @@ const Section = styled.a`
     border-top: 1px solid ${(props) => props.theme.secondaryText};
     cursor: pointer;
     transition: all 0.2s;
-    @media (max-width: 64em){
+   
+
+    @media (max-width: 98em){
         padding: 2rem 0rem;
     }
+
+
+    @media (max-width: 64em){
+        padding: 1.5rem 0rem;
+    }
+
+
     h2{
         font-size: ${(props) => props.theme.fontlg};
         margin: 0px;
@@ -26,13 +35,8 @@ const Section = styled.a`
           }
     }
 
-    p{
-        transition: all 0.4s;
-        font-weight: 300;
-    }
-
     &:last-of-type{
-        border-bottom: 1px solid rgb(201, 201, 201);
+        border-bottom: 1px solid ${(props) => props.theme.secondaryText};
     }
 
     &:hover{
@@ -45,8 +49,33 @@ const Section = styled.a`
         }
     }
 `
+const TechStack = styled.div`
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw; 
+    justify-content: flex-end;
+    p {
+        transition: all 0.4s;
+        font-size: ${props => props.theme.fontxs};
+        padding: 5px 10px;
+        background: ${props => props.theme.secondaryText};
+        color: ${props => props.theme.text};
+        border-radius: 10px;
+        width: fit-content;
+    }
 
-function Project({index, title, url, manageModal}) {
+    @media (max-width: 64em) {
+        gap: 1vw;
+        p {
+            padding: 1vw 1vw;
+            font-size: 0.5em;
+        }
+    }
+`
+
+
+function Project({index, title, url, manageModal, techStack}) {
 
     return (
         <Section 
@@ -56,7 +85,23 @@ function Project({index, title, url, manageModal}) {
             target="_blank"
         >
             <h2>{title}</h2>
-            <p>Design & Development</p>
+            <TechStack>
+                {/* <p>javascript</p>
+                <p>TailWind</p>
+                <p>react</p>
+                <p>style-component</p>
+                <p>react</p> */}
+
+                {
+                    techStack.map((item, index) =>{
+                        return (
+                            <>
+                                <p key={index}>{item}</p>
+                            </>
+                        )
+                    })
+                }
+            </TechStack>
         </Section>
     )
 }

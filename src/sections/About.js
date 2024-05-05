@@ -63,7 +63,7 @@ const About = () => {
         >
           <Button
             text="Download Resume"
-            href=""
+            href="https://flowcv.com/resume/i2uq3gtgdo"
           />
         </Download>
     </Section>

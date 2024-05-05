@@ -28,6 +28,8 @@ export const dark = {
     bodyRgba: '32,32,32',
     textRgba: '255,255,255',
 
+    border: '#ffff00',
+
     carouselColor: '#EEEDDE',
     
     grey: '#bebebe',
