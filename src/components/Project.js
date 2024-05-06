@@ -85,18 +85,17 @@ function Project({index, title, url, manageModal, techStack}) {
             target="_blank"
         >
             <h2>{title}</h2>
-            <TechStack>
-                {/* <p>javascript</p>
-                <p>TailWind</p>
-                <p>react</p>
-                <p>style-component</p>
-                <p>react</p> */}
-
+            <TechStack
+                
+            >
                 {
                     techStack.map((item, index) =>{
                         return (
                             <>
-                                <p key={index}>{item}</p>
+                                <p 
+                                data-aos="zoom-in"
+                                data-aos-duration="2000"
+                                key={index}>{item}</p>
                             </>
                         )
                     })

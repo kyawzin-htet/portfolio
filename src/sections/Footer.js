@@ -33,6 +33,7 @@ const Quote = styled.p`
     opacity: 0.3;
     text-align: justify;
     @media (max-width: 98em){
+      width: 90%;
       font-size: ${(props) => props.theme.fontxl};
      }
     @media (max-width: 64em){

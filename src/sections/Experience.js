@@ -10,7 +10,7 @@ const Section = styled.section`
   min-height: 100vh;
   width: 100vw;
   position: relative;
-  border-top: 1px solid ${props => props.theme.secondaryText};
+  // border-top: 1px solid ${props => props.theme.secondaryText};
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='38' height='38' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(180)'%3E%3Crect width='100%25' height='100%25' fill='rgba(0, 0, 0,1)'/%3E%3Cpath d='M-0.5 20v20h1v-20zM39.5 20v20h1v-20z' fill='rgba(13, 13, 13,1)'/%3E%3Cpath d='M-10 29.5 h60 v1 h-60z' fill='rgba(13, 13, 13,1)'/%3E%3Cpath d='M19.5 0v40h1v-40z' fill='rgba(13, 13, 13,1)'/%3E%3Cpath d='M-10 9.5h60v1h-60z' fill='rgba(13, 13, 13,1)'/%3E%3Cpath d='M-0.5 0v20h1v-20zM39.5 0v20h1v-20z' fill='rgba(13, 13, 13,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
 `
 
@@ -25,7 +25,7 @@ const Container = styled.div`
   position: relative;
 
   @media (max-width:64em){
-    width: 80%;
+    width: 95%;
   }
   @media (max-width:48em){
     width: 90%;
@@ -47,9 +47,9 @@ const Items = styled.ul`
   align-items: center;
   // background-color: ${(props) => props.theme.secondaryText};
 
-  @media (max-width:48em){
-    width: 90%;
-  }
+  // @media (max-width:48em){
+  //   width: 90%;
+  // }
 
   &>*:nth-of-type(2n +1){
     justify-content: start;
@@ -104,7 +104,8 @@ const ItemContainer = styled.div`
   border: 1px solid ${(props) => props.theme.secondaryText};
 
   @media (max-width:48em){
-    width: 80%;
+    width: 90%;
+    padding: 0.1rem;
   }
 `
 
@@ -115,7 +116,7 @@ const Box = styled.div`
   padding: 0.5rem;
   position: relative;
   border: 1px solid ${(props) => props.theme.secondaryText};
-  line-height: 2rem;
+  line-height: 1.5rem;
 
   div{
     display: flex;
@@ -167,7 +168,7 @@ const Company = styled.a`
 
 const Date = styled.span`
   display: block;
-  font-size: ${(props) => props.theme.fontsm};
+  font-size: ${(props) => props.theme.fontxs};
   color: ${(props) => props.theme.secondaryText};
 
   font-weight: 400;
@@ -178,11 +179,19 @@ const Date = styled.span`
   }
 `
 
+const Text = styled.p`
+  font-size: ${(props) => props.theme.fontxs};
+  text-align: justify;
+`
+
 const RoadMapItem = ({title, subtext, company, date, addToRef}) =>{
 
   return(
-    <Item ref={addToRef} data-aos="fade-up"
-    data-aos-duration="2000">
+    <Item 
+      ref={addToRef} 
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <ItemContainer>
           <Box>
             <div>
@@ -196,7 +205,7 @@ const RoadMapItem = ({title, subtext, company, date, addToRef}) =>{
               </Company>
             </div>
             <Date>({date})</Date>
-            {/* <Text>{subtext}</Text> */}
+            <Text>{subtext}</Text>
           </Box>
       </ItemContainer>
     </Item>
@@ -255,35 +264,60 @@ const Experience = () => {
             title="Full-Stack Developer"
             company={"C3"} 
             date={"Jan-2024/Now"}
-            subtext="loream ipsum"
+            subtext="During my time as a Frontend Developer, 
+            I focused on creating and maintaining frontend components. 
+            Collaborating closely with designers and backend developers, 
+            I ensured seamless integration of frontend components with backend 
+            APIs for efficient data flow. consistently stayed updated on industry
+             trends to enhance development processes and product quality."
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Full-Stack Developer" 
             company={"Tunyat"} 
             date={"Jun-2023/Dec-2023"}
-            subtext="loream ipsum" 
+            subtext="During my time as a Frontend Developer, 
+            I focused on creating and maintaining frontend components. 
+            Collaborating closely with designers and backend developers, 
+            I ensured seamless integration of frontend components with backend 
+            APIs for efficient data flow. consistently stayed updated on industry
+             trends to enhance development processes and product quality." 
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Web Developer" 
             company={"MDITS"} 
             date={"Jan-2022/May-2023"}
-            subtext="loream ipsum" 
+            subtext="During my time as a Frontend Developer, 
+            I focused on creating and maintaining frontend components. 
+            Collaborating closely with designers and backend developers, 
+            I ensured seamless integration of frontend components with backend 
+            APIs for efficient data flow. consistently stayed updated on industry
+             trends to enhance development processes and product quality." 
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Junior Developer" 
             company={"MDITS"} 
             date={"Jun-2020/Dec-2021"}
-            subtext="loream ipsum" 
+            subtext="During my time as a Frontend Developer, 
+            I focused on creating and maintaining frontend components. 
+            Collaborating closely with designers and backend developers, 
+            I ensured seamless integration of frontend components with backend 
+            APIs for efficient data flow. consistently stayed updated on industry
+             trends to enhance development processes and product quality." 
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Intern" 
             company={"Global Wave Technology"} 
             date={"Dec-2019/Feb-2020"}
-            subtext="loream ipsum" 
+            subtext="During my time as a Frontend Developer, 
+            I focused on creating and maintaining frontend components. 
+            Collaborating closely with designers and backend developers, 
+            I ensured seamless integration of frontend components with backend 
+            APIs for efficient data flow. consistently stayed updated on industry
+             trends to enhance development processes and product quality." 
           />
         </Items>
       </Container>
