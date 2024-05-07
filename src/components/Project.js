@@ -15,12 +15,12 @@ const Section = styled.a`
    
 
     @media (max-width: 98em){
-        padding: 2rem 0rem;
+        padding: 1.5rem 0rem;
     }
 
 
     @media (max-width: 64em){
-        padding: 1.5rem 0rem;
+        padding: 2rem 0rem;
     }
 
 

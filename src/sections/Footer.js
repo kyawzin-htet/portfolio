@@ -5,7 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import Button from '../components/Button';
 
 const Section = styled.section`
-  min-height: 60vh;
+  min-height: 100vh;
   width: 100vw;
   position: relative;
 

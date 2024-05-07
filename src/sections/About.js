@@ -5,14 +5,14 @@ import Paragraph from '../components/Paragraph'
 import Title from '../components/Title'
 
 const Section = styled.section`
-  min-height:80vh;
+  min-height:100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   color: ${props => props.theme.text};
   align-items: center;
   position: relative;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0rem 0rem;
   border-top: 2px solid ${props => props.theme.secondaryText};
   background-color: #0d0d0d;
   flex-direction: column;
