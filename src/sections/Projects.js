@@ -11,6 +11,7 @@ import kmovies from '../assets/Images/projects/crypto.png'
 import rhyme4u from '../assets/Images/projects/crypto.png'
 import Title from '../components/Title'
 import { ScrollTrigger } from 'gsap/all'
+import Button from '../components/Button';
 
 const Section = styled.div`
     min-height: 100vh;
@@ -29,7 +30,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 5rem;
+    gap: 3rem;
     @media (max-width: 64em){
       width: 90%;
       gap: 0rem;
@@ -210,6 +211,13 @@ const scaleAnimation = {
   closed: { scale: 0, x: "-50%", y: "-50%", transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] } }
 }
 
+const OtherProjects = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+`
+
 function Projects() {
 
   const [modal, setModal] = useState({ active: false, index: 0 })
@@ -294,9 +302,15 @@ function Projects() {
             })
           }
         </Body>
-        {/* <Rounded>
-          <p>More work</p>
-        </Rounded> */}
+        
+        <OtherProjects>
+              <Button
+                text="Other Projects"
+                href="https://www.linkedin.com/in/kyaw-zin-htet-dev/"
+              />
+        </OtherProjects>
+            
+        {/* </Rounded> */}
         <>
           <ModalContainer
             ref={modalContainer}

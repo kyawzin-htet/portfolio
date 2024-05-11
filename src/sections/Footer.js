@@ -17,8 +17,8 @@ const Section = styled.section`
   border-top: 1px solid ${props => props.theme.secondaryText};
   gap: 10rem;
   @media (max-width: 64em){
-    min-height: 40vh;
-    gap: 2rem
+    min-height: 60vh;
+    gap: 3rem
   }
 `
 

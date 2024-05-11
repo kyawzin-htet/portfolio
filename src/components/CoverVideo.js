@@ -104,7 +104,7 @@ const Blob = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 10%;
-  background-color: ${props => props.theme.border};
+  background-color: ${props => props.theme.text};
   opacity: 1;
   filter: blur(12px);
   animation: ${BlobAnimation} 5s infinite ease;

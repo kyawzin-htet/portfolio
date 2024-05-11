@@ -264,60 +264,48 @@ const Experience = () => {
             title="Full-Stack Developer"
             company={"C3"} 
             date={"Jan-2024/Now"}
-            subtext="During my time as a Frontend Developer, 
-            I focused on creating and maintaining frontend components. 
-            Collaborating closely with designers and backend developers, 
-            I ensured seamless integration of frontend components with backend 
-            APIs for efficient data flow. consistently stayed updated on industry
-             trends to enhance development processes and product quality."
+            subtext="Developed a full-stack POS web application using the MERN stack, facilitating efficient inventory management and checkout processes.
+            Utilized TypeScript, Node.js, Express.js, and MongoDB to design scalable APIs, implementing clean architecture principles.
+            Conducted unit tests and code reviews to ensure quality and maintainability.
+            Established a robust CI/CD pipeline, optimizing application performance.
+            Utilized Git for version control and followed Agile methodologies.
+            "
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Full-Stack Developer" 
             company={"Tunyat"} 
             date={"Jun-2023/Dec-2023"}
-            subtext="During my time as a Frontend Developer, 
-            I focused on creating and maintaining frontend components. 
-            Collaborating closely with designers and backend developers, 
-            I ensured seamless integration of frontend components with backend 
-            APIs for efficient data flow. consistently stayed updated on industry
-             trends to enhance development processes and product quality." 
+            subtext="Designed scalable APIs using Node.js, Express.js, and MongoDB.Developed a Rewarding Fund Management System using React, Redux, Node.js,
+             Express.js, and MongoDB.Collaborated with stakeholders to translate requirements into scalable features.
+             Provided mentorship to junior developers and conducted code reviews." 
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Web Developer" 
             company={"MDITS"} 
             date={"Jan-2022/May-2023"}
-            subtext="During my time as a Frontend Developer, 
-            I focused on creating and maintaining frontend components. 
-            Collaborating closely with designers and backend developers, 
-            I ensured seamless integration of frontend components with backend 
-            APIs for efficient data flow. consistently stayed updated on industry
-             trends to enhance development processes and product quality." 
+            subtext="•Developed, implemented and modified 4+ web apps and mobile applications.•Worked on multiple projects using the MERN stack and delivered them on time.
+            Worked closely with the team to implement new features and improve application performance.
+            Developed and implemented backend logic using Aws Lambda, Node.js, Express.js and MongoDB.
+            Mentored junior developers and ensured code quality through unit tests and code reviews." 
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Junior Developer" 
             company={"MDITS"} 
             date={"Jun-2020/Dec-2021"}
-            subtext="During my time as a Frontend Developer, 
-            I focused on creating and maintaining frontend components. 
-            Collaborating closely with designers and backend developers, 
-            I ensured seamless integration of frontend components with backend 
-            APIs for efficient data flow. consistently stayed updated on industry
-             trends to enhance development processes and product quality." 
+            subtext="Assisted in building backend components using Node.js and Express.js. 
+            Collaborated in designing RESTful APIs for frontend-backend communication. 
+            Developed efficient database schemas and queries for data management." 
           />
           <RoadMapItem 
             addToRef={addToRefs} 
             title="Intern" 
             company={"Global Wave Technology"} 
             date={"Dec-2019/Feb-2020"}
-            subtext="During my time as a Frontend Developer, 
-            I focused on creating and maintaining frontend components. 
-            Collaborating closely with designers and backend developers, 
-            I ensured seamless integration of frontend components with backend 
-            APIs for efficient data flow. consistently stayed updated on industry
-             trends to enhance development processes and product quality." 
+            subtext="Developed a website using .NET Core, C#, JQuery, HTML, JavaScript, Angular, and Bootstrap.
+            Designed dynamic pages using HTML, CSS, JQuery, JavaScript, and Angular.Utilized Angular components for single-page applications." 
           />
         </Items>
       </Container>

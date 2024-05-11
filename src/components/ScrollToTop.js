@@ -20,6 +20,7 @@ const Up = styled.div`
  justify-content: center;
  align-items: center;
  border-radius: 50%;
+ z-index: 100;
 
  transition: all 0.2s ease;
  &:hover{
