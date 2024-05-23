@@ -3,12 +3,13 @@ import React, { useRef } from 'react';
 import styled from 'styled-components'
 
 const Text = styled(motion.p)`
-    display: flex;
+    
     color: ${(props) => props.theme.text};
-    font-size: ${(props) => props.theme.fontxl};
+    font-size: ${(props) => props.theme.fontlg};
     padding: 40px;
     letter-spacing: 0.2rem;
     font-weight: bold;
+    display: flex;
     flex-wrap: wrap;
     text-align: justify;
 
@@ -26,7 +27,6 @@ const Text = styled(motion.p)`
         position: relative;
         margin-right: 12px;
         margin-top: 12px;
-
         .shadow{
             position: absolute;
             opacity: 20%;

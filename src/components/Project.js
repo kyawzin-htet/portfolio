@@ -8,7 +8,7 @@ const Section = styled.a`
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 0rem;
+    padding: 2rem 0rem;
     border-top: 1px solid ${(props) => props.theme.secondaryText};
     cursor: pointer;
     transition: all 0.2s;

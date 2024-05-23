@@ -14,7 +14,7 @@ import { ScrollTrigger } from 'gsap/all'
 import Button from '../components/Button';
 
 const Section = styled.div`
-    min-height: 100vh;
+    min-height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -42,6 +42,7 @@ const Body = styled.div`
     display: flex;
     flex-direction: column;
     color: ${(props) => props.theme.secondaryText};
+    margin-bottom: 3rem;
 `
 
 const ModalContainer = styled(motion.div)`
@@ -303,12 +304,12 @@ function Projects() {
           }
         </Body>
         
-        <OtherProjects>
+        {/* <OtherProjects>
               <Button
                 text="Other Projects"
                 href="https://www.linkedin.com/in/kyaw-zin-htet-dev/"
               />
-        </OtherProjects>
+        </OtherProjects> */}
             
         {/* </Rounded> */}
         <>

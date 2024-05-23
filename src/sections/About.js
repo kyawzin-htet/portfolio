@@ -23,21 +23,36 @@ const Container = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 const Content = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
+  @media (max-width: 98em){
+    width: 100%;
+  }
+  @media (max-width: 64em){
+    width: 100%;
+  }
 `
 
 
 const Download = styled.div`
-  width: 90%;
+  width: 80%;
   display: flex;
   justify-content: flex-end;
   margin: 1rem;
+
+  @media (max-width: 98em){
+    width: 90%;
+  }
+  @media (max-width: 64em){
+    width: 90%;
+  }
 `
 
 
@@ -54,10 +69,9 @@ const About = () => {
         <Content>         
             <Paragraph paragraph={text}/>             
         </Content>
-      </Container>
 
         <Download
-          data-aos="fade-up"
+          data-aos="fade-left"
           data-aos-duration="2000"
           // data-aos-anchor-placement="center-top"
         >
@@ -66,6 +80,9 @@ const About = () => {
             href="https://flowcv.com/resume/i2uq3gtgdo"
           />
         </Download>
+      </Container>
+
+       
     </Section>
   )
 }
