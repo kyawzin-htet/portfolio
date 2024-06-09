@@ -71,7 +71,7 @@ const About = () => {
         </Content>
 
         <Download
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-duration="2000"
           // data-aos-anchor-placement="center-top"
         >
