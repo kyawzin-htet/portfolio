@@ -9,7 +9,7 @@ const Up = styled.div`
  margin: 0;
  padding: 0;
  color: ${props => props.theme.secondaryText};
- background-color: #0F0F0F;
+ background-color: #ffffff;
 
  font-size: ${(props) => props.theme.fontxl};
  position: fixed;

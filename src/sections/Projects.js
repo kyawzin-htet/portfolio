@@ -1,128 +1,39 @@
-import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+
 import styled from 'styled-components'
 import Project from '../components/Project';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
 import kanban from '../assets/Images/projects/kanban.png'
 import weather from '../assets/Images/projects/weather.png'
 import crypto from '../assets/Images/projects/crypto.png'
-import authapp from '../assets/Images/projects/crypto.png'
-import kmovies from '../assets/Images/projects/crypto.png'
-import rhyme4u from '../assets/Images/projects/crypto.png'
+import authapp from '../assets/Images/projects/authapp.png'
+import kmovies from '../assets/Images/projects/kmovies.png'
+import rhyme4u from '../assets/Images/projects/rhyme4u.png'
 import Title from '../components/Title'
-import { ScrollTrigger } from 'gsap/all'
-import Button from '../components/Button';
 
 const Section = styled.div`
-    min-height: auto;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-top: 1px solid ${props => props.theme.secondaryText};
-    background: black;
+    padding: 4rem 0;
+    background: #0D0D0D;
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
 `
 
 const Container = styled.div`
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 3rem;
-    @media (max-width: 64em){
-      width: 90%;
-      gap: 0rem;
-    }
-`
-
-const Body = styled.div`
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
-    color: ${(props) => props.theme.secondaryText};
-    margin-bottom: 3rem;
+    gap: 2rem;
 `
-
-const ModalContainer = styled(motion.div)`
-    height: 20rem;
-    width: 22rem;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    background-color: white;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 3;
-    @media (max-width: 64em){
-      height: 13rem;
-      width: 15rem;
-    }
-`
-
-const ModalSlider = styled.div`
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    img{
-      height: 80%;
-      width: 80%;
-    }
-`
-
-const Modal = styled.div`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img{
-        height: auto;
-    }
-`
-
-const Cursor = styled(motion.div)`
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: ${props => props.theme.secondaryText};
-    color: white;
-    position: fixed;
-    z-index:3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 300;
-    pointer-events: none;
-`
-
-const CursorLabel = styled(motion.div)`
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: ${props => props.theme.secondaryText};
-    color: white;
-    position: fixed;
-    z-index:3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 300;
-    pointer-events: none;
-    background-color: transparent;
-`
-
 
 const projects = [
   {
     title: "Weather App",
-    src: weather,
-    color: "#000000",
+    description: "A modern weather application that provides real-time weather information with an interactive map interface. Users can search for locations and view detailed weather forecasts with beautiful visualizations.",
+    image: weather,
     url: 'https://weatherapp-k-next.vercel.app/',
+    github: 'https://github.com/yourusername/weather-app',
     techStack: [
       'next.js',
       'react',
@@ -133,8 +44,8 @@ const projects = [
   },
   {
     title: "Kanban App",
-    src: kanban,
-    color: "#636e72",
+    image: kanban,
+    description: "A kanban board application that provides a flexible and customizable way to manage tasks and projects with an intuitive interface. Users can create, edit, and delete tasks, as well as move them between columns with ease.",
     url: 'https://mern-stack-kanban.vercel.app',
     techStack: [
       'react',
@@ -150,8 +61,8 @@ const projects = [
   },
   {
     title: "Crypto Track",
-    src: crypto,
-    color: "#b2bec3",
+    description: "A modern cryptocurrency tracking application that provides real-time data and analytics with an intuitive interface. Users can search for cryptocurrencies and view detailed information with beautiful visualizations.",
+    image: crypto,
     url: 'https://track-app-crypto.netlify.app/',
     techStack: [
       'react',
@@ -161,8 +72,8 @@ const projects = [
   },
   {
     title: "Rhyme4U",
-    src: rhyme4u,
-    color: "#dfe6e9",
+    description: "react music player app with shazam core api",
+    image: rhyme4u,
     url: 'https://rhyme4u.netlify.app/',
     techStack: [
       'react',
@@ -173,7 +84,8 @@ const projects = [
   },
   {
     title: "Auth App",
-    src: authapp,
+    image: authapp,
+    description: "A modern authentication application that provides secure user authentication and authorization with an intuitive interface. Users can sign up, log in, and manage their accounts with ease.",
     color: "#000000",
     url: 'https://mern-authenication.vercel.app/',
     techStack: [
@@ -190,7 +102,8 @@ const projects = [
   },
   {
     title: "Kmovies",
-    src: kmovies,
+    description: "A movie application that provides a wide range of movies and TV shows with an intuitive interface. Users can search for movies and TV shows, save them to their favorites, and view detailed information.",
+    image: kmovies,
     color: "#636e72",
     url: 'https://moviesk.netlify.app/',
     techStack: [
@@ -206,156 +119,35 @@ const projects = [
     ]
   }
 ]
-const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: { scale: 1, x: "-50%", y: "-50%", transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] } },
-  closed: { scale: 0, x: "-50%", y: "-50%", transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] } }
-}
 
-const OtherProjects = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin: 1rem;
+const ProjectsGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
 `
 
 function Projects() {
-
-  const [modal, setModal] = useState({ active: false, index: 0 })
-  const { active, index } = modal;
-  const modalContainer = useRef(null);
-  const cursor = useRef(null);
-  const cursorLabel = useRef(null);
-
-  let xMoveContainer = useRef(null);
-  let yMoveContainer = useRef(null);
-  let xMoveCursor = useRef(null);
-  let yMoveCursor = useRef(null);
-  let xMoveCursorLabel = useRef(null);
-  let yMoveCursorLabel = useRef(null);
-
-  useEffect(() => {
-    //Move Container
-    xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", { duration: 0.8, ease: "power3" })
-    yMoveContainer.current = gsap.quickTo(modalContainer.current, "top", { duration: 0.8, ease: "power3" })
-    //Move cursor
-    xMoveCursor.current = gsap.quickTo(cursor.current, "left", { duration: 0.5, ease: "power3" })
-    yMoveCursor.current = gsap.quickTo(cursor.current, "top", { duration: 0.5, ease: "power3" })
-    //Move cursor label
-    xMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "left", { duration: 0.45, ease: "power3" })
-    yMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "top", { duration: 0.45, ease: "power3" })
-  }, [])
-
-  const moveItems = (x, y) => {
-    xMoveContainer.current(x)
-    yMoveContainer.current(y)
-    xMoveCursor.current(x)
-    yMoveCursor.current(y)
-    xMoveCursorLabel.current(x)
-    yMoveCursorLabel.current(y)
-  }
-  const manageModal = (active, index, x, y) => {
-    moveItems(x, y)
-    setModal({ active, index })
-  }
-
-  const ref = useRef(null);
-  gsap.registerPlugin(ScrollTrigger);
-  useLayoutEffect(() => {
-
-    let element = ref.current;
-
-    ScrollTrigger.create({
-      trigger: element,
-      start: 'top top',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-      scrub: true,
-    })
-    return () => {
-      ScrollTrigger.kill();
-    };
-  }, [])
-
-  return (
-    <Section
-      onMouseMove={(e) => { moveItems(e.clientX, e.clientY) }}
-      id="projects"
-      ref={ref}
-    >
-
-      <Container ref={ref}>
-
-        <Title title="Projects" />
-
-        <Body>
-          {
-            projects.map((project, index) => {
-              return <Project 
-                index={index} 
-                title={project.title} 
-                url={project.url} 
-                manageModal={manageModal} 
-                key={index} 
-                techStack={project.techStack} 
-              />
-            })
-          }
-        </Body>
-        
-        {/* <OtherProjects>
-              <Button
-                text="Other Projects"
-                href="https://www.linkedin.com/in/kyaw-zin-htet-dev/"
-              />
-        </OtherProjects> */}
-            
-        {/* </Rounded> */}
-        <>
-          <ModalContainer
-            ref={modalContainer}
-            variants={scaleAnimation}
-            initial="initial"
-            animate={active ? "enter" : "closed"}
-          >
-            
-            <ModalSlider
-              style={{ top: index * -100 + "%" }}
-            >
-              {
-                projects.map((project, index) => {
-                  const { src, color, title } = project
-                  return <Modal style={{ backgroundColor: color }} key={`modal_${index}`}>
-                    <img
-                      src={src}
-                      width={300}
-                      height={0}
-                      alt={title}
-                    />
-                  </Modal>
-                })
-              }
-            </ModalSlider>
-          </ModalContainer>
-          <Cursor
-            ref={cursor}
-            variants={scaleAnimation}
-            initial="initial"
-            animate={active ? "enter" : "closed"}
-          ></Cursor>
-          <CursorLabel
-            ref={cursorLabel}
-            variants={scaleAnimation}
-            initial="initial"
-            animate={active ? "enter" : "closed"}
-          >
-            demo &#62;
-          </CursorLabel>
-        </>
-      </Container>
-    </Section>
-  )
+    return (
+        <Section id="projects">
+            <Container>
+                <Title title="Projects" />
+                <ProjectsGrid>
+                    {projects.map((project, index) => (
+                        <Project 
+                            key={index}
+                            {...project}
+                        />
+                    ))}
+                </ProjectsGrid>
+            </Container>
+        </Section>
+    )
 }
 
 export default Projects

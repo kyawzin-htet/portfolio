@@ -34,7 +34,7 @@ const Home = () => {
 
   return (
     <Section id="home">
-        <div ref={ref}>
+        <div >
           <CoverVideo />
           <Logo />  
         </div>

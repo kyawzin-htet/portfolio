@@ -13,8 +13,7 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #0d0d0d;
-  border-top: 1px solid ${props => props.theme.secondaryText};
+  background: #000000;
   gap: 10rem;
   @media (max-width: 64em){
     min-height: 60vh;
