@@ -34,8 +34,8 @@ function App() {
     <>
      <GlobalStyles />
      <ThemeProvider theme={dark} >
-        {/* {
-          Loaded ? ( */}
+        {
+          Loaded ? (
             <>
                <AnimatePresence>
                 <Navigation />
@@ -47,8 +47,8 @@ function App() {
                 <ScrollToTop />
               </AnimatePresence>
             </>
-          {/* ) : <Loader />
-        } */}
+          ) : <Loader />
+        } 
      </ThemeProvider>
     </>
   );
