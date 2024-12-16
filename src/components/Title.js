@@ -20,8 +20,8 @@ const Text = styled.div`
 const Title = (props) => {
   return (
     <Text
-        data-aos="fade-up"
-        data-aos-duration="2000"    
+        // data-aos="fade-up"
+        // data-aos-duration="2000"    
     >
         &#123; {props.title} &#125;
     </Text>

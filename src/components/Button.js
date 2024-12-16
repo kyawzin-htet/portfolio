@@ -23,29 +23,6 @@ const StyledButton = styled.button`
   &:hover {
     box-shadow: inset 0px 0px 25px ${props => props.theme.secondaryText};
   }
-
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    width: 95%;
-    height: 40%;
-    //background-color: transparent;
-    background-color: #0D0D0D;
-    transition: 0.5s;
-  }
-
-  &::after {
-    top: -10px;
-    left: 3%;
-    transform-origin: center;
-  }
-
-  &::before {
-    top: 80%;
-    left: 3%;
-    transform-origin: center;
-  }
 `;
 
 const Button = ({text, href}) => {
@@ -57,6 +34,7 @@ const Button = ({text, href}) => {
   return (
     <StyledButton onClick={handleClick} >
       {text}
+      {}
     </StyledButton>
 
   )

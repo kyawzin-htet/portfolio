@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const Card = styled.div`
-    background: #111111;
+    background: #000;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -85,34 +85,31 @@ const Button = styled.a`
     &.demo {
         background: ${props => props.theme.primary};
         color: white;
-        border: 0.5px solid ${props => props.theme.primary};
+        border: 0.5px solid ${props => props.theme.secondaryText};
+
+        &:hover::before,
+        &:hover::after {
+            transform: scale(0);
+        }
 
         &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px ${props => props.theme.primary}40;
-            background: ${props => props.theme.primary}ee;
-        }
-        
-        &:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px ${props => props.theme.primary}40;
+            box-shadow: inset 0px 0px 25px ${props => props.theme.secondaryText};
+        }ox-shadow: 0 2px 4px ${props => props.theme.primary}40;
         }
     }
 
     &.github {
         background: transparent;
         color: ${props => props.theme.text};
-        border: 0.5px solid ${props => props.theme.primary};
+        border: 0.5px solid ${props => props.theme.secondaryText};
+
+        &:hover::before,
+        &:hover::after {
+            transform: scale(0);
+        }
 
         &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px ${props => props.theme.primary}40;
-            background: ${props => props.theme.primary}ee;
-        }
-        
-        &:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px ${props => props.theme.primary}40;
+            box-shadow: inset 0px 0px 25px ${props => props.theme.secondaryText};
         }
     }
 
@@ -146,17 +143,19 @@ function Project({ title, description, techStack, url, github }) {
             </TechStack>
 
             <Links>
-                <Button 
-                    href={url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="demo"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Demo
-                </Button>
+                {url && (
+                    <Button 
+                        href={url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="demo"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Demo 
+                    </Button>
+                )}
                 {github && (
                     <Button 
                         href={github} 
@@ -169,7 +168,7 @@ function Project({ title, description, techStack, url, github }) {
                         </svg>
                         Source
                     </Button>
-                )}
+                )} 
             </Links>
         </Card>
     );
