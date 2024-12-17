@@ -2,15 +2,14 @@ import React, { useLayoutEffect, useRef } from 'react'
 import { useWindowScroll } from 'react-use';
 import styled from 'styled-components'
 
-const Up = styled.div`
+const Div = styled.div`
  width: 3rem;
  height: 3rem;
  box-sizing: border-box;
  margin: 0;
  padding: 0;
- color: ${props => props.theme.secondaryText};
- background-color: #ffffff;
-
+ color: ${(props) => props.theme.secondaryText};
+ border: 1px solid  ${(props) => props.theme.secondaryText};
  font-size: ${(props) => props.theme.fontxl};
  position: fixed;
  right: 1rem;
@@ -23,50 +22,65 @@ const Up = styled.div`
  z-index: 100;
 
  transition: all 0.2s ease;
- &:hover{
+ &:hover {
     transform: scale(1.1);
  }
- &:active{
+ &:active {
     transform: scale(0.9);
  }
 
- @media (max-width: 64em){
+ @media (max-width: 64em) {
   width: 2rem;
   height: 2rem;
   font-size: ${(props) => props.theme.fontlg};
   right: 0.5rem;
   bottom: 0.5rem;
-}
+ }
+`
+
+// Animated SVG Component
+const AnimatedArrow = styled.svg`
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: #fff;
+  stroke-width: 2;
+  fill: none;
+
+  // Hover animation
+  ${Div}:hover & {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+  }
 `
 
 const ScrollToTop = () => {
+  const ref = useRef(null);
+  const { y } = useWindowScroll();
 
-    const ref = useRef(null);
-    const {y} = useWindowScroll();
+  const scrollToTop = () => {
+    let element = document.getElementById('home');
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  };
 
-    const scrollToTop = () => {
-        let element = document.getElementById("home");
-    
-        element.scrollIntoView({
-          behavior:'smooth',
-          block: 'start',
-          inline: 'nearest'
-        })
-      }
-
-    useLayoutEffect(() =>{
-        if(y > 200){
-            ref.current.style.display = "flex"
-        }else{
-            ref.current.style.display = "none"
-        }
-    },[y])
+  useLayoutEffect(() => {
+    if (y > 200) {
+      ref.current.style.display = 'flex';
+    } else {
+      ref.current.style.display = 'none';
+    }
+  }, [y]);
 
   return (
-    <Up ref={ref} onClick={() => scrollToTop()}>
-        &#x2191;
-    </Up>
-  )
-}
+    <Div ref={ref} onClick={() => scrollToTop()}>
+      <AnimatedArrow viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </AnimatedArrow>
+    </Div>
+  );
+};
 
-export default ScrollToTop
+export default ScrollToTop;

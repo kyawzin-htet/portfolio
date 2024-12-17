@@ -21,8 +21,8 @@ const Navbar = styled.nav`
     width: 20%;
     height: auto;
     border-radius: 0.3rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid  ${(props) => props.theme.secondaryText};
+    background-color: rgba(0, 0, 0, 1);
+    // border: 1px solid  ${(props) => props.theme.secondaryText};
     color: ${(props) => props.theme.text};
     display: flex;
     justify-content: space-around;
@@ -64,9 +64,9 @@ const MenuItem = styled.li`
 const Divider = styled.span`
   display: flex;
   width: 0.05rem;
-  height: 2vh;
+  height: 1.5vh;
   background: ${(props) => props.theme.secondaryText};
-  transform: rotate(25deg);
+  transform: rotate(90deg);
 `;
 
 const Navigation = () => {
@@ -95,13 +95,13 @@ const Navigation = () => {
     <Section id="navigation" ref={ref}>
       <Navbar>
         <Menu>
-          <MenuItem onClick={() => scrollTo('home')}>Home</MenuItem>
+          <MenuItem onClick={() => scrollTo('home')}>HOME</MenuItem>
           <Divider />
-          <MenuItem onClick={() => scrollTo('about')}>Me</MenuItem>
+          <MenuItem onClick={() => scrollTo('about')}>ME</MenuItem>
           <Divider />
-          <MenuItem onClick={() => scrollTo('experience')}>Exp</MenuItem>
+          <MenuItem onClick={() => scrollTo('experience')}>EXP</MenuItem>
           <Divider />
-          <MenuItem onClick={() => scrollTo('projects')}>Works</MenuItem>
+          <MenuItem onClick={() => scrollTo('projects')}>WORKS</MenuItem>
         </Menu>
       </Navbar>
     </Section>

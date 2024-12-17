@@ -25,7 +25,7 @@ const DarkOverlay = styled.div`
     left: 0;
     right: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.94);
 `
 
 const Info = styled(motion.div)`

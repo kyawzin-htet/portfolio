@@ -23,7 +23,7 @@ const Title = (props) => {
         // data-aos="fade-up"
         // data-aos-duration="2000"    
     >
-        &#123; {props.title} &#125;
+        - {props.title} -
     </Text>
   )
 }
