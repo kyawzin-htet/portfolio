@@ -103,37 +103,37 @@ const Footer = () => {
 
   return (
     <Section>
-            <Quote
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              &#34;Rather than exceptional gifts, I offer a burning curiosity that fuels my exploration.&#34;
-            </Quote>
+      <Quote
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
+        &#34;Rather than exceptional gifts, I offer a burning curiosity that fuels my exploration.&#34;
+      </Quote>
 
-            {/* <Paragraph paragraph={text}/> */}
+      {/* <Paragraph paragraph={text}/> */}
 
-            <GetInTouch>
-                <Left>
-                    <Text>
-                        <p className="made">
-                          Made with <CiHeart className="heart"/>  and <DiReact className="react"/>
-                        </p>
-                        <p>© 2023 KYAW ZIN HTET. ALL RIGHT RESERVED.</p>
-                    </Text>
-                </Left>
+      <GetInTouch>
+        <Left>
+          <Text>
+            <p className="made">
+              Made with <CiHeart className="heart" />  and <DiReact className="react" />
+            </p>
+            <p>© 2026 KYAW ZIN HTET. ALL RIGHT RESERVED.</p>
+          </Text>
+        </Left>
 
-                <Right>
-                    <Button
-                      text="Linkedin"
-                      href="https://www.linkedin.com/in/kyaw-zin-htet-dev/"
-                    />
+        <Right>
+          <Button
+            text="Linkedin"
+            href="https://www.linkedin.com/in/kyaw-zin-htet-dev/"
+          />
 
-                    <Button
-                      text="Github"
-                      href="https://github.com/kyawzin-htet"
-                    />
-                </Right>       
-             </GetInTouch>
+          <Button
+            text="Github"
+            href="https://github.com/kyawzin-htet"
+          />
+        </Right>
+      </GetInTouch>
     </Section>
   )
 }
