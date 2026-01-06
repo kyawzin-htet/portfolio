@@ -45,7 +45,7 @@ const Download = styled.div`
   width: 80%;
   display: flex;
   justify-content: flex-end;
-  margin: 1rem;
+  margin: 1rem auto;
 
   @media (max-width: 98em){
     width: 90%;

@@ -11,6 +11,7 @@ const Section = styled.section`
   align-items: center;
   background-color: #000000;
   border-radius: 1rem;
+  overflow: hidden;
 `
 
 const Title = styled.div`
