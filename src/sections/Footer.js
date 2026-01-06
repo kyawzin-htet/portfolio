@@ -73,7 +73,8 @@ const Left = styled.div`
   @media (max-width: 64em){
     width: 100%;
     align-items: flex-start;
-    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-left: 0;
    }
 `;
 
