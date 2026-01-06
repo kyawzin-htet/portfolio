@@ -6,7 +6,7 @@ import Button from '../components/Button';
 
 const Section = styled.section`
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
 
   display: flex;
@@ -42,11 +42,11 @@ const Quote = styled.p`
 `;
 
 const GetInTouch = styled.section`
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     @media (max-width: 64em){
-      width: 100vw;
+      width: 100%;
       gap: 2rem;
       flex-direction: column-reverse;
      }

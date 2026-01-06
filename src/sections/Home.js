@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/all'
 
 const Section = styled.section`
   min-height: ${props => `calc(100vh - ${props.theme.navHeight})`};
-  width: 100vw;
+  width: 100%;
   position: relative;
   color: #fff;
 `
